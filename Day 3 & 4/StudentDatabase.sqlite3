@@ -1,0 +1,36 @@
+CREATE TABLE Student (
+	roll_number INTEGER PRIMARY KEY AUTOINCREMENT,
+   	first_name TEXT NOT NULL,
+   	last_name TEXT ,
+   	age  INTEGER ,
+   	branch TEXT NOT NULL,
+   	year  INTEGER NOT NULL
+);
+
+INSERT INTO Student (first_name,age ,branch,year)
+VALUES( 'Vimal', 20 ,'CSE',3);
+
+INSERT INTO Student (first_name,last_name,age ,branch,year)
+VALUES
+( 'shri','Vishnu', 20 ,'CSE',3),
+( 'Arun','Prasanth', 20 ,'CSE',3),
+( 'Aswin','Kumar', 20 ,'CSE',3);
+
+INSERT INTO Student (first_name,age ,branch,year)
+VALUES
+( 'Kishore', 20 ,'CSE',3),
+( 'Thulasi', 20 ,'CSE',3);
+
+
+UPDATE Student
+SET age=21
+WHERE first_name='Vimal';
+
+UPDATE Student
+SET branch='ECE'
+WHERE last_name='Thulasi';
+
+
+
+DELETE FROM student
+WHERE roll_number= (select COUNT(*) from student);
